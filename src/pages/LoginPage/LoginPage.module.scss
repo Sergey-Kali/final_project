@@ -9,8 +9,7 @@
   @include main-font(500, 16px, 22px, normal);
   text-align: center;
 }
-// .button_profile {
-// }
+
 .header__container {
   width: 100%;
   min-height: 60px;
@@ -74,7 +73,7 @@
     line-height: calc(45 / 30);
   }
 }
-// ________________________________________
+
 .exitBox {
   display: flex;
   min-width: 106px;
@@ -95,43 +94,7 @@
   text-align: right;
   color: getColor('secondary-text-color');
 }
-.vector {
-  // display: none;
-  // @media screen and (min-width: 768px) {
-  //   display: block;
-  //   margin: 0 12px;
-  // }
-}
-.button {
-  // background-color: transparent;
-  // border: none;
-  // padding: 0;
-  // font-family: CirceRegular;
-  // font-style: normal;
-  // font-size: 18px;
-  // line-height: calc(27 / 18);
-  // color: getColor('secondary-text-color');
-  // cursor: pointer;
-  // display: none;
-  // @media screen and (min-width: 768px) {
-  //   display: block;
-  //   margin-left: 8px;
-  // }
-}
 
-.exit {
-  // width: 18px;
-  // height: 18px;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
-  // cursor: pointer;
-  // margin-left: 8px;
-  // @media screen and (min-width: 768px) {
-  //   margin-left: 0;
-  // }
-}
-// _____________________________
 .button_profile {
   margin-top: 40px;
   cursor: pointer;
