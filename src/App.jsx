@@ -1,20 +1,36 @@
-import { Routes, Route } from "react-router-dom";
-import SharedLayout from "./components/SharedLayout/SharedLayout";
-import Shop from "./pages/Shop/Shop";
-import Cart from "./pages/Cart/Cart";
-import History from "./pages/History/History";
+import { BrowserRouter } from 'react-router-dom';
+import UserRoutes from 'shared/UserRoutes/UserRoutes';
+import { Provider } from 'react-redux';
+import store from './redux/store';
+import AuthLayout from 'components/AuthLayout/AuthLayout';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-function App() {
+
+Notify.init({
+  timeout: 5000,
+  width: '360px',
+  clickToClose: true,
+  cssAnimationStyle: 'zoom',
+  info: {
+    background: '#54ADFF',
+    notiflixIconColor: '#ffffff',
+  },
+  failure: {
+    notiflixIconColor: '#ffffff',
+  },
+  success: {
+    notiflixIconColor: '#ffffff',
+  }
+})
+
+export const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<SharedLayout />}>
-        <Route index element={<Shop />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/history" element={<History />} />
-        <Route path="*" element={<Shop />} />
-      </Route>
-    </Routes>
+    <Provider store={store}>
+      <BrowserRouter basename="/react-node-team-app">
+        <AuthLayout>
+          <UserRoutes />
+        </AuthLayout>
+      </BrowserRouter>
+    </Provider>
   );
-}
-
-export default App;
+};
